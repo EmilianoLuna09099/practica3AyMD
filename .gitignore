@@ -1,2 +1,6 @@
-# Datos crudos
-data/data-raw/
+**/data-raw/
+*.csv
+
+**/.ipynb_checkpoints/
+**/__pycache__/
+*.pyc
