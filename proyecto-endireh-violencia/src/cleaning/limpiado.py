@@ -9,6 +9,8 @@ def limpiar_datos(ruta_csv):
     df_limpio = df_sin_desc.with_columns([
         pl.col("ingreso_pareja").is_not_null().alias("tiene_pareja"),
         pl.col("ingreso_pareja").fill_null(0).alias("ingreso_pareja"),
+        pl.col("num_hijos").is_not_null().alias("tiene_hijos"),
+        pl.col("num_hijos").fill_null(0).alias("num_hijos"),
     ])
     
     df_limpio = df_limpio.drop_nulls(subset=["edad_primer_union"])
